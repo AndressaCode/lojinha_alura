@@ -20,6 +20,20 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: PaletaCores().lilas,
+        textTheme: TextTheme(
+          headline1: TextStyle(
+            fontSize: 20.0,
+            fontFamily: 'Alata',
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+          headline2: TextStyle(
+            fontSize: 20.0,
+            fontFamily: 'Alata',
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
       ),
       home: Inicio(),
     );
