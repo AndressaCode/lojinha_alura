@@ -5,6 +5,8 @@ import 'package:lojinha_alura/paleta_cores.dart';
 import 'package:lojinha_alura/widgets/appbar_customizada.dart';
 import 'package:lojinha_alura/widgets/grid_produtos.dart';
 
+import 'modelos/item_carrinho.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -41,6 +43,11 @@ class MyApp extends StatelessWidget {
 }
 
 class Inicio extends StatelessWidget {
+
+  static List<ItemCarrinho> itensCarrinho = [
+
+  ];
+
   final List moveis = [
     {
       "titulo": "Mesa",
