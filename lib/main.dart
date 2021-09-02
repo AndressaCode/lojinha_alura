@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lojinha_alura/paginas/carrinho.dart';
-import 'package:lojinha_alura/paginas/detalhes.dart';
 import 'package:lojinha_alura/paleta_cores.dart';
 import 'package:lojinha_alura/widgets/appbar_customizada.dart';
 import 'package:lojinha_alura/widgets/grid_produtos.dart';
@@ -34,6 +33,12 @@ class MyApp extends StatelessWidget {
             fontFamily: 'Alata',
             fontWeight: FontWeight.bold,
             color: Colors.white,
+          ),
+          headline3: TextStyle(
+            fontSize: 16.0,
+            fontFamily: 'Alata',
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
           ),
         ),
       ),

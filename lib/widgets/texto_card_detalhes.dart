@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class TextoDetalhes extends StatelessWidget {
+class TextoCardDetalhes extends StatelessWidget {
 
   final String texto;
   final TextStyle estilo;
 
-  TextoDetalhes({this.texto, this.estilo});
+  TextoCardDetalhes({this.texto, this.estilo});
 
   @override
   Widget build(BuildContext context) {

@@ -3,12 +3,11 @@ import 'package:intl/intl.dart';
 import 'package:lojinha_alura/modelos/item_carrinho.dart';
 import 'package:lojinha_alura/modelos/movel.dart';
 import 'package:lojinha_alura/paleta_cores.dart';
-import 'package:lojinha_alura/widgets/texto_detalhes.dart';
+import 'package:lojinha_alura/widgets/texto_card_detalhes.dart';
 
 import '../main.dart';
 
 class CardDetalhes extends StatelessWidget {
-
   final formatacaoReais = NumberFormat.currency(locale: 'pt_BR', symbol: 'R\$');
   final Movel movel;
   final Function atualizaPagina;
@@ -21,11 +20,11 @@ class CardDetalhes extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          TextoDetalhes(
+          TextoCardDetalhes(
             texto: movel.titulo,
             estilo: Theme.of(context).textTheme.headline1,
           ),
-          TextoDetalhes(texto: movel.descricao),
+          TextoCardDetalhes(texto: movel.descricao),
           Container(
             margin: EdgeInsets.only(left: 16.0, right: 16.0, bottom: 8.0),
             child: Row(
@@ -41,8 +40,10 @@ class CardDetalhes extends StatelessWidget {
                         MaterialStateProperty.all(PaletaCores().lilas),
                   ),
                   onPressed: () {
-                    _adicionarItemCarrinho(
-                        ItemCarrinho(quantidade: 1, movel: movel));
+                    _verificarListaItemCarrinho(
+                      Inicio.itensCarrinho,
+                      ItemCarrinho(movel: movel, quantidade: 1),
+                    );
                   },
                   child: Text(
                     'Comprar',
@@ -59,8 +60,18 @@ class CardDetalhes extends StatelessWidget {
     );
   }
 
-  _adicionarItemCarrinho(ItemCarrinho item) {
+  void _adicionarItemCarrinho(item) {
     Inicio.itensCarrinho.add(item);
     atualizaPagina();
+  }
+
+  void _verificarListaItemCarrinho(
+      List<ItemCarrinho> lista, ItemCarrinho item) {
+    int indiceMovel = lista.indexWhere((item) => item.movel == movel);
+    if (indiceMovel >= 0) {
+      lista[indiceMovel].quantidade = lista[indiceMovel].quantidade + 1;
+    } else {
+      _adicionarItemCarrinho(item);
+    }
   }
 }

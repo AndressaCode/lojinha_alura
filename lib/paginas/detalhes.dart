@@ -47,7 +47,7 @@ class _DetalhesState extends State<Detalhes> {
     );
   }
 
-  atualiza() {
+  void atualiza() {
     setState(() {});
   }
 }
