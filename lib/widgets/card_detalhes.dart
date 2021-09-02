@@ -8,10 +8,12 @@ import 'package:lojinha_alura/widgets/texto_detalhes.dart';
 import '../main.dart';
 
 class CardDetalhes extends StatelessWidget {
-  final Movel movel;
-  final formatacaoReais = NumberFormat.currency(locale: 'pt_BR', symbol: 'R\$');
 
-  CardDetalhes({this.movel});
+  final formatacaoReais = NumberFormat.currency(locale: 'pt_BR', symbol: 'R\$');
+  final Movel movel;
+  final Function atualizaPagina;
+
+  CardDetalhes({this.movel, this.atualizaPagina});
 
   @override
   Widget build(BuildContext context) {
@@ -59,5 +61,6 @@ class CardDetalhes extends StatelessWidget {
 
   _adicionarItemCarrinho(ItemCarrinho item) {
     Inicio.itensCarrinho.add(item);
+    atualizaPagina();
   }
 }
