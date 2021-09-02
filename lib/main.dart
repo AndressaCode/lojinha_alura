@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lojinha_alura/paginas/carrinho.dart';
 import 'package:lojinha_alura/paginas/detalhes.dart';
+import 'package:lojinha_alura/widgets/appbar_customizada.dart';
 
 void main() {
   runApp(MyApp());
@@ -80,10 +81,8 @@ class Inicio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Inicio'),
-        centerTitle: true,
-      ),
+      backgroundColor: Colors.grey[200],
+      appBar: AppBarCustomizada(titulo: 'Lojinha Alura', ehPaginaCarrinho: false),
       body: ElevatedButton(
         onPressed: (){
           Navigator.push(
