@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class TituloElementoGridProdutos extends StatelessWidget{
-
+class TituloElementoGridProdutos extends StatelessWidget {
   final String titulo;
 
   TituloElementoGridProdutos({this.titulo});
@@ -9,11 +8,8 @@ class TituloElementoGridProdutos extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: 10 ,
+      bottom: 10,
       child: Text(titulo),
     );
   }
-
-
-
 }
