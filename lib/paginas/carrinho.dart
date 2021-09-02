@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lojinha_alura/widgets/appbar_customizada.dart';
+import 'package:lojinha_alura/widgets/lista_carrinho.dart';
 
 class Carrinho extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ class Carrinho extends StatelessWidget {
         titulo: 'Carrinho',
         ehPaginaCarrinho: true,
       ),
-      body: Text('Estamos no carrinho'),
+      body: ListaCarrinho(),
     );
   }
 }
