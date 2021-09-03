@@ -40,6 +40,17 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
+          headline4: TextStyle(
+            fontSize: 20.0,
+            fontFamily: 'Alata',
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+          headline5: TextStyle(
+              fontSize: 20.0,
+              fontFamily: 'Alata',
+              fontWeight: FontWeight.w200,
+              color: Colors.black),
         ),
       ),
       home: Inicio(),
@@ -48,10 +59,7 @@ class MyApp extends StatelessWidget {
 }
 
 class Inicio extends StatelessWidget {
-
-  static List<ItemCarrinho> itensCarrinho = [
-
-  ];
+  static List<ItemCarrinho> itensCarrinho = [];
 
   final List moveis = [
     {
